@@ -14,7 +14,7 @@ import numpy as np
 
 
 def get_data():
-    return pd.read_csv('/Users/mcbride_tara/Downloads/California_Fire_Incidents.csv')
+    return pd.read_csv('California_Fire_Incidents.csv')
 
 
 def filter_data(sel_counties, minAcres, sel_year):
