@@ -6,8 +6,6 @@ Description: In this program I will analyze California Fire incidents to generat
 over time.
 """
 
-
-
 import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
@@ -18,16 +16,12 @@ import numpy as np
 def get_data():
     return pd.read_csv('/Users/mcbride_tara/Downloads/California_Fire_Incidents.csv')
 
-default_Acres = 5000
-default_year = [2013, 2014, 2015, 2016, 2017]
-default_counties = ['Los Angeles', 'San Diego', 'Riverside']
-
 
 def filter_data(sel_counties, minAcres, sel_year):
     df = get_data()
     df.loc[df['Counties'].isin(sel_counties)]
     df.loc[df['AcresBurned'] < minAcres]
-    df.loc[df['ArchiveYear'].isin(sel_counties)]
+    df.loc[df['ArchiveYear'].isin(sel_year)]
 
     return df
 
